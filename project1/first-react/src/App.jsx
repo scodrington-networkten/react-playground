@@ -6,12 +6,15 @@ import './App.css'
 
 
 
-function Test(){
-    const element = createElement('h1', null, "hello world");
-    return element;
+const Test = () =>{
+    return (
+        <>
+            <h2>Hello world!</h2>
+        </>
+    )
 }
 
-function App() {
+const App = () => {
   const [count, setCount] = useState(0)
 
   return (
@@ -40,4 +43,4 @@ function App() {
   )
 }
 
-export default App
+export { App, Test}
