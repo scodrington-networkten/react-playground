@@ -3,7 +3,11 @@ const List = () => {
         <>
             <section className="list">
                 <ul>
-                    <li>This is an item</li>
+                    <li>Was first released in 2013</li>
+                    <li>Was originally created by Jordan Walke</li>
+                    <li>Has well over 200k stars of github</li>
+                    <li>Is maintained by Meta</li>
+                    <li>Powers thousands of enterprise apps, including mobile apps</li>
                 </ul>
             </section>
         </>
