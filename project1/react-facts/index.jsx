@@ -14,15 +14,19 @@ Hints:
  */
 
 import {StrictMode} from 'react'
+import {Fragment} from "react";
 import {createRoot} from 'react-dom/client'
-import './index.css';
+//import './index.css';
+import "./src/css/style.scss"
 import {App} from './app';
 
 const root = document.getElementById('root');
 createRoot(root).render(
-    <StrictMode>
-        <App/>
-    </StrictMode>
+    <>
+        <StrictMode>
+            <App/>
+        </StrictMode>
+    </>
 )
 
 

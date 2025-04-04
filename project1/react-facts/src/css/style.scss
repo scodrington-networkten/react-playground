@@ -1,0 +1,44 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #27292c;
+  color: white;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+.logo-section {
+  background-color: #21222a;
+  padding: 0px 1em;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5em;
+  padding: 0.75em 1em;
+
+  .logo {
+    max-width: 40px;
+  }
+
+  span {
+    color: #60d8f9;
+    font-size: 1.25rem;
+  }
+}
+
+ul li {
+  margin-bottom: 1em;
+
+  &:last-of-type {
+    margin-bottom: 0em;
+  }
+
+  &::marker {
+    color: #60d8f9;
+  }
+}
+
+section {
+  padding: 0em 1em;
+}
