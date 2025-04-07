@@ -1,0 +1,27 @@
+@use 'variables';
+
+//header specific styles
+.site-header {
+  background-color: #f35959;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: variables.$primary-color;
+
+  .top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.5em;
+  }
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 1.2em;
+  }
+
+}

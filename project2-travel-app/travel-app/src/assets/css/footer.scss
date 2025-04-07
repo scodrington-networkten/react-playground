@@ -1,0 +1,10 @@
+@use 'variables';
+
+//footer specific styles
+.site-footer{
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #242424;
+  text-align: center;
+  color: variables.$primary-color;
+}
