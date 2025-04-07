@@ -1,5 +1,8 @@
+@use "./navigation";
+@use "./main";
+
+
 body{
-  border: solid 1px red;
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-weight: 600;
