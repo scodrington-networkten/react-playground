@@ -24,9 +24,29 @@ ul li {
 
   &::marker {
     color: #60d8f9;
+    font-size: 1.5em;
   }
 }
 
 section {
   padding: 0em 1em;
+}
+.primary-content{
+  position: relative;
+}
+
+.primary-content .background-image{
+  background-image: url(react-logo.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  background-size: contain;
+  filter: grayscale(1);
+  height: 100%;
+  left: -50px;
+  width: 100%;
+  max-width: 200px;
+  background-position: center;
+  top: 0px;
+  opacity: 0.15;
+  pointer-events: none;
 }

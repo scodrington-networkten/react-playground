@@ -2,7 +2,7 @@ const Heading = () => {
     return(
         <>
             <section className="heading">
-                <h2>Heading Here</h2>
+                <h2>Fun facts about React</h2>
             </section>
         </>
     )
