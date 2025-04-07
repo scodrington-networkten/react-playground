@@ -1,0 +1,24 @@
+header{
+
+  background-color: #21222a;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
+  nav{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 0.55em;
+
+    img{
+      width: 40px;
+      height: 40px;
+
+    }
+    span{
+      color: #60d8f9;
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+}

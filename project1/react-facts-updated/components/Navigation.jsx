@@ -2,7 +2,7 @@ const Navigation = () => {
     return (
         <>
             <header>
-                <nav>
+                <nav className="container">
                     <img src="./react-logo.png" alt="image"/>
                     <span>ReactFacts</span>
                 </nav>

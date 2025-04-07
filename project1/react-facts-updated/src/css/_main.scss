@@ -1,0 +1,37 @@
+.main-content{
+  background-image: url("react-logo-half.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  h1{
+    font-size: 1.8rem;
+  }
+
+  ul{
+
+    li{
+      margin-bottom: 0.8rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+
+      &:last-of-type{
+        margin-bottom: 0rem;
+      }
+    }
+    li::marker{
+      color: #60d8f9;
+      font-size: 1.25rem;
+    }
+  }
+
+  .background-image{
+    border: solid 1px red;
+    width: 100px;
+    height: 100px;
+
+    position:absolute;
+    right: 0px;
+    top: 0px;
+  }
+
+}
