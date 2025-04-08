@@ -9,14 +9,21 @@
   .secondary {
     margin: 0em;
 
-    img {
+    .image-container {
+      position: relative;
+      display: flex;
+      overflow: hidden;
+    }
+
+    img.main-image {
 
       width: 150px;
       height: 200px;
       object-fit: cover;
       max-width: 200px;
       border-radius: 0.5em;
-
+      transform: scale(1.0);
+      transition: transform 0.3s ease-in-out;
     }
 
     figcaption {
@@ -56,6 +63,10 @@
         text-decoration: underline;
         font-size: 0.8rem;
         margin-left: 0.5rem;
+
+        &:active, &:hover {
+          color: #a5a5ac;
+        }
       }
     }
 
@@ -90,7 +101,63 @@
       font-size: 0.9rem;
     }
 
+
   }
+
+  .social-actions {
+
+    position: absolute;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    column-gap: 1em;
+    opacity: 0;
+    transition: opacity 0.35s ease-in-out;
+
+    .background {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(44, 44, 44, 0.37);
+    }
+
+    .social-action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 0.25rem;
+      position: relative;
+
+      img {
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+      }
+
+      span {
+        color: #eee;
+      }
+    }
+
+
+  }
+
+  //show social actions when hovering
+  &:focus-within, &:hover {
+
+    .social-actions {
+      opacity: 1;
+    }
+
+    .secondary img.main-image {
+      transform: scale(1.1);
+    }
+  }
+
 
   //change layout for mobile
   @media screen and (max-width: 40em) {
@@ -102,7 +169,7 @@
       order: 1;
       z-index: 1;
 
-      img {
+      img.main-image {
         width: 100%;
         max-width: none;
         border-radius: 0rem;
@@ -114,6 +181,17 @@
         right: 0px;
         background: rgba(238, 238, 238, 0.85);
         padding: 0.5rem;
+      }
+
+
+      .social-actions{
+        opacity: 1;
+        position: absolute;
+        top: 0em;
+        left: 0em;
+        width: auto;
+        height: auto;
+        padding: 0.25rem 0.5rem;
       }
     }
     .primary {

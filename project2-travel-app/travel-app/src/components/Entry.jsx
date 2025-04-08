@@ -18,8 +18,24 @@ const Entry = ({data}) => {
         <>
             <article className="entry">
                 <figure className="secondary">
-                    <img src={`../assets/images/${image.url}`} alt={ image.alt}/>
+                    <div className="image-container">
+                        <img className="main-image" src={`../assets/images/${image.url}`} alt={image.alt}/>
+                        <div className="social-actions">
+                            <div className="background"/>
+                            <div className="social-action">
+                                <img src="../assets/images/comments.png" alt="Likes"/>
+                                <span>10</span>
+                            </div>
+                            <div className="social-action">
+                                <img src="../assets/images/likes.png" alt="Comments"/>
+                                <span>5</span>
+                            </div>
+
+                        </div>
+                    </div>
                     <figcaption>{image.caption}</figcaption>
+
+
                 </figure>
                 <section className="primary">
                     <header>
@@ -44,15 +60,15 @@ const Entry = ({data}) => {
     )
 }
 
-function displayActive(active){
+function displayActive(active) {
 
     let element
-    if(active){
-        return(
+    if (active) {
+        return (
             <p className="activeState">Active</p>
         );
-    }else{
-        return(
+    } else {
+        return (
             <p className="activeState">Inactive</p>
         )
     }

@@ -1,5 +1,6 @@
 const jsonData = [
     {
+        id: 1,
         location: "Mount Fuji",
         image: {
             url: "japan-image.jpg",
@@ -11,9 +12,14 @@ const jsonData = [
         active: true,
         description: "Mount Fuji is the tallest mountain in Japan, standing at 3,776 meters (12,380 feet). Mount Fuji is the single most popular tourist site in Japan, for both Japanese and foreign tourists.",
         googleMap: "https://www.google.com/maps/place/Mount+Fuji/@35.3606421,138.7170637,15z",
-        country: "Japan"
+        country: "Japan",
+        social: {
+            likes: 33,
+            comments: 30
+        }
     },
     {
+        id: 2,
         location: "Eiffel Tower",
         image: {
             url: "eiffel-tower.jpg",
@@ -25,9 +31,14 @@ const jsonData = [
         active: false,
         description: "The Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is a global cultural icon of France and one of the most recognizable structures in the world.",
         googleMap: "https://www.google.com/maps/place/Eiffel+Tower/",
-        country: "France"
+        country: "France",
+        social: {
+            likes: 27,
+            comments: 35
+        }
     },
     {
+        id: 3,
         location: "Grand Canyon",
         image: {
             url: "grand-canyon.jpg",
@@ -39,9 +50,14 @@ const jsonData = [
         active: true,
         description: "The Grand Canyon is a steep-sided canyon carved by the Colorado River in Arizona, United States. It is known for its visually overwhelming size and intricate landscape.",
         googleMap: "https://www.google.com/maps/place/Grand+Canyon/",
-        country: "USA"
+        country: "USA",
+        social: {
+            likes: 65,
+            comments: 33
+        }
     },
     {
+        id: 4,
         location: "Great Wall of China",
         image: {
             url: "great-wall.jpg",
@@ -53,9 +69,14 @@ const jsonData = [
         active: false,
         description: "The Great Wall of China is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China.",
         googleMap: "https://www.google.com/maps/place/Great+Wall+of+China/",
-        country: "China"
+        country: "China",
+        social: {
+            likes: 10,
+            comments: 3
+        }
     },
     {
+        id: 5,
         location: "Sydney Opera House",
         image: {
             url: "sydney-opera-house.jpg",
@@ -67,7 +88,11 @@ const jsonData = [
         active: true,
         description: "The Sydney Opera House is a multi-venue performing arts centre in Sydney. It is one of the 20th century's most famous and distinctive buildings.",
         googleMap: "https://www.google.com/maps/place/Sydney+Opera+House/",
-        country: "Australia"
+        country: "Australia",
+        social: {
+            likes: 22,
+            comments: 23
+        }
     }
 ];
 
