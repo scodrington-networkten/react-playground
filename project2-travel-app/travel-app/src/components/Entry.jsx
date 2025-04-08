@@ -42,7 +42,11 @@ const Entry = ({data}) => {
                         <div className="country">
                             <img src="../assets/images/marker.png" alt="location image"/>
                             <p>{country}</p>
-                            <a href={googleMap}>View on Google Maps</a>
+                            <span className="view-on-google">
+                                <a href={googleMap}>View on Google Maps</a>
+                                <img className="map-icon" src="../assets/images/marker.png" alt="location image"/>
+                            </span>
+
                         </div>
                         <h2 className="location">{location}</h2>
                         {displayActive(active)}
