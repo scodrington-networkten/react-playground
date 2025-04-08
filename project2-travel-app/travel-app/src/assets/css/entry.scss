@@ -1,0 +1,93 @@
+//entry specific styles
+.entry {
+  display: flex;
+  column-gap: 1rem;
+  align-content: center;
+  align-items: center;
+
+  //secondary data (image + caption)
+  .secondary {
+    margin: 0em;
+
+    img {
+
+      width: 150px;
+      height: 200px;
+      object-fit: cover;
+      max-width: 200px;
+      border-radius: 0.5em;
+
+    }
+
+    figcaption {
+      color: #646364;
+      font-size: 0.8rem;
+      font-style: italic;
+    }
+  }
+
+  //right side (main data)
+  .primary {
+
+
+    .country {
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      column-gap: 0.25em;
+      margin: 0rem;
+
+      img {
+        width: 10px;
+        height: auto;
+      }
+
+      p {
+        text-transform: uppercase;
+        font-weight: 300;
+        font-size: 1.1rem;
+        margin: 0rem;
+      }
+
+      a {
+        color: #c0bec4;
+        text-decoration: underline;
+        font-size: 0.8rem;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .location {
+      margin: 0rem auto 0.75rem auto;
+      font-weight: 700;
+    }
+
+    .dates {
+      font-weight: 700;
+      margin: 0rem auto 0.5rem auto;
+      font-size: 0.85rem;
+
+      .start, .end {
+
+      }
+    }
+
+    .description {
+      line-height: 1.5rem;
+      margin-top: 0rem;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+
+  }
+
+}
+
+hr {
+  display: block;
+  height: 1px;
+  padding: 0;
+  background: #eee;
+  border: 0px;
+}

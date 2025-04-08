@@ -1,9 +1,10 @@
+import Entry from "./Entry";
 const Main = () => {
     return (
         <>
             <main className="container">
                 <div className="inner">
-                    content here woo
+                    <Entry/>
                 </div>
             </main>
         </>
