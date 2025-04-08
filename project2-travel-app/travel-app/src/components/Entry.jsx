@@ -10,14 +10,14 @@ const Entry = ({data}) => {
         endDate,
         active,
         description,
-        googleMap
+        googleMap,
+        country
     } = data;
 
     return (
         <>
             <article className="entry">
                 <figure className="secondary">
-
                     <img src={`../assets/images/${image.url}`} alt={ image.alt}/>
                     <figcaption>{image.caption}</figcaption>
                 </figure>
@@ -25,7 +25,7 @@ const Entry = ({data}) => {
                     <header>
                         <div className="country">
                             <img src="../assets/images/marker.png" alt="location image"/>
-                            <p>Japan</p>
+                            <p>{country}</p>
                             <a href={googleMap}>View on Google Maps</a>
                         </div>
                         <h2 className="location">{location}</h2>

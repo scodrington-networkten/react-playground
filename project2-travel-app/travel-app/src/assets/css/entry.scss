@@ -68,14 +68,14 @@
     .dates {
       font-weight: 700;
       margin: 0rem auto 0.5rem auto;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
 
       .start, .end {
 
       }
     }
 
-    .activeState{
+    .activeState {
       font-size: 0.8rem;
       margin: 0rem auto 0.25rem auto;
       font-style: italic;
@@ -93,22 +93,22 @@
   }
 
   //change layout for mobile
-  @media screen and (max-width: 40em){
+  @media screen and (max-width: 40em) {
     flex-wrap: wrap;
 
-
-    .secondary{
+    .secondary {
       position: relative;
       width: 100%;
       order: 1;
       z-index: 1;
 
-      img{
+      img {
         width: 100%;
-        max-width:none;
+        max-width: none;
         border-radius: 0rem;
       }
-      figcaption{
+
+      figcaption {
         position: absolute;
         top: 0px;
         right: 0px;
@@ -116,7 +116,7 @@
         padding: 0.5rem;
       }
     }
-    .primary{
+    .primary {
       order: 2;
       z-index: 1;
       margin-top: -100px;
