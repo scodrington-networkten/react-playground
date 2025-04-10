@@ -1,5 +1,5 @@
 
-import "/src/assets/css/footer.scss";
+import "/src/css/footer.scss";
 const Footer = () => {
     return (
         <>

@@ -1,4 +1,4 @@
-import '/src/assets/css/header.scss';
+import '/src/css/header.scss';
 
 const Header = () => {
     return (
@@ -6,7 +6,7 @@ const Header = () => {
             <header className="site-header container">
                 <div className="inner">
                     <div className="top">
-                        <img src="/src/assets/images/globe.png"/>
+                        <img src="/assets/images/globe.png"/>
                         <span>Travel Journal</span>
                     </div>
                 </div>

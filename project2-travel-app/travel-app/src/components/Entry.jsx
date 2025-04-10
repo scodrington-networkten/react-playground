@@ -1,5 +1,5 @@
 //represents a single entry for the journal
-import "../assets/css/entry.scss";
+import "../css/entry.scss";
 
 const Entry = ({data}) => {
 
@@ -19,32 +19,30 @@ const Entry = ({data}) => {
             <article className="entry">
                 <figure className="secondary">
                     <div className="image-container">
-                        <img className="main-image" src={`../assets/images/${image.url}`} alt={image.alt}/>
+                        <img className="main-image" src={`/src/images/${image.url}`} alt={image.alt}/>
                         <div className="social-actions">
                             <div className="background"/>
                             <div className="social-action">
-                                <img src="../assets/images/comments.png" alt="Likes"/>
+                                <img src="/assets/images/likes.png" alt="Likes"/>
                                 <span>10</span>
                             </div>
                             <div className="social-action">
-                                <img src="../assets/images/likes.png" alt="Comments"/>
+                                <img src="/assets/images/comments.png" alt="Comments"/>
                                 <span>5</span>
                             </div>
 
                         </div>
                     </div>
                     <figcaption>{image.caption}</figcaption>
-
-
                 </figure>
                 <section className="primary">
                     <header>
                         <div className="country">
-                            <img src="../assets/images/marker.png" alt="location image"/>
+                            <img src="/assets/images/marker.png" alt="location image"/>
                             <p>{country}</p>
                             <span className="view-on-google">
                                 <a href={googleMap}>View on Google Maps</a>
-                                <img className="map-icon" src="../assets/images/marker.png" alt="location image"/>
+                                <img className="map-icon" src="/assets/images/marker.png" alt="location image"/>
                             </span>
 
                         </div>
