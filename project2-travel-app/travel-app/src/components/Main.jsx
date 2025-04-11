@@ -5,7 +5,7 @@ const Main = () => {
 
     //define array of entry data for
     const components = JsonData.map((item, index) => {
-        return <Entry data={item} key={item.id}/>;
+        return <Entry entry={item.entry} key={item.id} author={item.author}/>;
     });
 
     return (

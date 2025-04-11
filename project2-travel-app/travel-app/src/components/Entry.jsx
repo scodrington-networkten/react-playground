@@ -1,7 +1,7 @@
 //represents a single entry for the journal
 import "/src/css/entry.scss";
 
-const Entry = ({data}) => {
+const Entry = ({entry, author}) => {
 
     const {
         location,
@@ -12,7 +12,12 @@ const Entry = ({data}) => {
         description,
         googleMap,
         country
-    } = data;
+    } = entry;
+
+    const {
+        name
+    } = author;
+
 
     return (
         <>
@@ -51,8 +56,10 @@ const Entry = ({data}) => {
                         <h2 className="location">{location}</h2>
                         {displayActive(active)}
                         <p className="dates">
-                            <span className="start">{startDate}</span> - <span
-                            className="end">{endDate}</span>
+                            <span className="start">{startDate}</span>
+                            <span>-</span>
+                            <span className="end">{endDate},</span>
+                            <span className="author">{name}</span>
                         </p>
                         <p className="description">{description}</p>
                     </header>

@@ -105,9 +105,15 @@
       font-weight: 700;
       margin: 0rem auto 0.5rem auto;
       font-size: 0.9rem;
+      display:flex;
+      column-gap: 0.25rem;
 
-      .start, .end {
+      span{
 
+      }
+      span.author{
+        color: #f15858;
+        font-weight: 400;
       }
     }
 
