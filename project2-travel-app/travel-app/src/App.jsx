@@ -1,5 +1,3 @@
-import {useState} from 'react'
-import reactLogo from '/src/images/react.svg'
 import Header from './components/Header'
 import Footer from "./components/Footer";
 import Main from "./components/Main";
