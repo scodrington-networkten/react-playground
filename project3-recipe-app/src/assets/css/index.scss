@@ -1,11 +1,12 @@
+@use './variables';
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color-scheme: light dark;
+  /*color-scheme: light dark;
   color: #242424;
-  background-color: #e6e6e6;
+  background-color: #e6e6e6;*/
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -31,7 +32,6 @@ body {
 
 .container {
   width: 100%;
-
 }
 
 .inner{
@@ -46,12 +46,41 @@ body {
   flex-grow: 1;
 }
 
-
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
+
+input[type="text"] {
+  border-radius: variables.$element-border-radius;
+  padding: variables.$form-element-padding;
+  border: solid 1px variables.$form-border-color;
+  color: variables.$form-input-text-color;
+  outline: none;
+
+  &::placeholder{
+    color: inherit
+  }
+
+  &:focus{
+
+  }
+}
+
+button, input[type="button"], input[type="submit"], input[type="reset"]{
+  border-radius: variables.$element-border-radius;
+  padding: variables.$form-element-padding;
+  border: solid 1px variables.$form-border-color;
+  background: variables.$form-button-bg-color;
+  color: variables.$form-button-text-color;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+
+
+}
+
+
 
 
 @media (prefers-color-scheme: light) {
