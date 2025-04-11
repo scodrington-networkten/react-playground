@@ -1,5 +1,5 @@
 //represents a single entry for the journal
-import "../css/entry.scss";
+import "/src/css/entry.scss";
 
 const Entry = ({data}) => {
 
@@ -17,6 +17,7 @@ const Entry = ({data}) => {
     return (
         <>
             <article className="entry">
+                {/* Image section*/}
                 <figure className="secondary">
                     <div className="image-container">
                         <img className="main-image" src={`/src/images/${image.url}`} alt={image.alt}/>
@@ -35,6 +36,7 @@ const Entry = ({data}) => {
                     </div>
                     <figcaption>{image.caption}</figcaption>
                 </figure>
+                {/* info section */}
                 <section className="primary">
                     <header>
                         <div className="country">

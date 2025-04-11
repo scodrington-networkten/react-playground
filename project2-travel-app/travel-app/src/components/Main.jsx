@@ -4,7 +4,7 @@ import JsonData from "../../json-data.jsx";
 const Main = () => {
 
     //define array of entry data for
-    const components = JsonData.map((item) => {
+    const components = JsonData.map((item, index) => {
         return <Entry data={item} key={item.id}/>;
     });
 
