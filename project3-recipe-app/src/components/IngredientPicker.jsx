@@ -1,28 +1,34 @@
 import '@css/ingredient-picker.scss';
+import { useState} from "react";
 
-const IngredientPicker = () => {
+const IngredientPicker = ({onAddItem}) => {
 
-    function handleClick(e) {
-
-        //console.log("Mouse Clicked!");
-    }
-
-    function handleMouseEntered() {
-       // console.log("Mouse entered!");
-    }
+    //state of the input value
+    const [inputValue, setInputValue] = useState("");
 
     function submitForm(e){
         e.preventDefault();
-        alert("form submitted");
+        const formData = new FormData(e.currentTarget);
+        let value = formData.get('ingredient_picker');
+        onAddItem(value);
+        setInputValue("");
     }
+
+    console.log(inputValue);
 
     return (
         <>
             <form className="ingredient-form" onSubmit={submitForm}>
                 <div className="ingredient-picker">
-                    <input placeholder="Search for ingredient" type="text" name="ingredient_picker"
-                           id="ingredient_picker" aria-label="Search for ingredient"/>
-                    <button onClick={handleClick} onMouseEnter={handleMouseEntered}>+ Add Ingredient</button>
+                    <input
+                        placeholder="Search for ingredient"
+                        type="text"
+                        name="ingredient_picker"
+                        id="ingredient_picker"
+                        aria-label="Search for ingredient"
+                        onChange={(e) => setInputValue(e.target.value)}
+                    />
+                    <button>+ Add Ingredient</button>
                 </div>
             </form>
         </>
