@@ -4,19 +4,20 @@ import {useState} from "react";
 
 const IngredientsSection = () => {
 
+    //holds all currently selected ingredients
     let [ingredients, setIngredients] = useState(["apple", "Banana"]);
 
-   // console.log(ingredients);
-
+    //called by IngredientPicker when submitting the form, to select a new ingredient
     function handleAddItem (newItem){
         console.log("The value passed was" + newItem);
+        setIngredients([...ingredients, newItem]);
     }
 
     return (
         <>
             <div className="ingredients-section">
                 <IngredientPicker onAddItem={handleAddItem}/>
-                <IngredientList data={{ingredients: ["apple", "melon"]}}/>
+                <IngredientList data={{ingredients: ingredients}}/>
             </div>
         </>
     )

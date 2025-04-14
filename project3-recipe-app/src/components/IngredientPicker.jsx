@@ -1,20 +1,20 @@
 import '@css/ingredient-picker.scss';
-import { useState} from "react";
+import {useState} from "react";
 
 const IngredientPicker = ({onAddItem}) => {
 
     //state of the input value
     const [inputValue, setInputValue] = useState("");
 
-    function submitForm(e){
+    //on form submission, collect input value and call parent onAddItem to pass up the value
+    function submitForm(e) {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         let value = formData.get('ingredient_picker');
         onAddItem(value);
+        //reset input value
         setInputValue("");
     }
-
-    console.log(inputValue);
 
     return (
         <>
