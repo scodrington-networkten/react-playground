@@ -6,19 +6,17 @@ const IngredientPicker = ({onAddItem}) => {
     //state of the input value
     const [inputValue, setInputValue] = useState("");
 
-    //on form submission, collect input value and call parent onAddItem to pass up the value
-    function submitForm(e) {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        let value = formData.get('ingredient_picker');
+    //action for form, provided with formdata
+    function submit(formData) {
+        console.log(formData);
+        let value = formData.get("ingredient_picker");
         onAddItem(value);
-        //reset input value
         setInputValue("");
     }
 
     return (
         <>
-            <form className="ingredient-form" onSubmit={submitForm}>
+            <form className="ingredient-form" action={submit}>
                 <div className="ingredient-picker">
                     <input
                         placeholder="Search for ingredient"

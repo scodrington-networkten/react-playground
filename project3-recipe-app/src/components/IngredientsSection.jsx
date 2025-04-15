@@ -5,12 +5,13 @@ import {useState} from "react";
 const IngredientsSection = () => {
 
     //holds all currently selected ingredients
-    let [ingredients, setIngredients] = useState(["apple", "Banana"]);
+    const [ingredients, setIngredients] = useState(["apple", "Banana"]);
 
     //called by IngredientPicker when submitting the form, to select a new ingredient
     function handleAddItem (newItem){
-        console.log("The value passed was" + newItem);
-        setIngredients([...ingredients, newItem]);
+        setIngredients(function(prevIngredients ){
+            return [...prevIngredients, newItem];
+        });
     }
 
     return (
