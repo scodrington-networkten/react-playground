@@ -10,7 +10,7 @@ const Main = () => {
         <main className="main-content">
             <div className="inner">
                 <IngredientsSection/>
-                <SignupForm/>
+                {/*<SignupForm/>*/}
             </div>
         </main>
     )

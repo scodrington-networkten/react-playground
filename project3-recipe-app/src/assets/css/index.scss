@@ -79,10 +79,15 @@ button, input[type="button"], input[type="submit"], input[type="reset"]{
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
-
-
 }
 
+
+.ingredient-list{
+  ul{
+    list-style-type: none;
+  }
+
+}
 
 
 
