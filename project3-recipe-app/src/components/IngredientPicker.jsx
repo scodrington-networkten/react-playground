@@ -8,7 +8,6 @@ const IngredientPicker = ({onAddItem}) => {
 
     //action for form, provided with formdata
     function submit(formData) {
-        console.log(formData);
         let value = formData.get("ingredient_picker");
         onAddItem(value);
         setInputValue("");

@@ -15,15 +15,28 @@ const IngredientList = (props) => {
 
     const [myValue, setMyValue] = useState("hello");
 
-    //setMyValue("New Value")
-    return (
-        <>
-            <div className="ingredient-list">
-                <h2>Here are all our ingredients</h2>
+
+    const getContent = () => {
+
+        if(ingredients.length > 0){
+            return <>
+                <h2>Here are all our ingredient</h2>
                 <ul>
                     {components}
                 </ul>
+            </>
+        }else{
+            return <>
+                <h2>Enter ingredients above to get started</h2>
+            </>
+        }
 
+    };
+
+    return (
+        <>
+            <div className="ingredient-list">
+                {getContent()}
             </div>
         </>
     )
