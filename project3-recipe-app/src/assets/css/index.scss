@@ -79,6 +79,8 @@ button, input[type="button"], input[type="submit"], input[type="reset"]{
   cursor: pointer;
   font-size: 0.9rem;
   font-weight: 500;
+  white-space: nowrap;
+  transition: all ease-out 200ms;
 
   &:hover, &:focus{
     background-color: variables.$form-button-bg-color-active;
