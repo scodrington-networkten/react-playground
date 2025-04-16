@@ -7,7 +7,7 @@ import ingredient from "@components/Ingredient.jsx";
 const IngredientsSection = () => {
 
     //holds all currently selected ingredients
-    const [ingredients, setIngredients] = useState(["apple", "Banana"]);
+    const [ingredients, setIngredients] = useState(["Apple", "Banana", "Watermelon"]);
 
     //called by IngredientPicker when submitting the form, to select a new ingredient
     function handleAddItem(newItem) {
@@ -26,7 +26,7 @@ const IngredientsSection = () => {
     return (
         <>
             <div className="ingredients-section">
-                <IngredientPicker onAddItem={handleAddItem}/>
+                <IngredientPicker onAddItem={handleAddItem} ingredients={ingredients}/>
                 <IngredientList onRemoveItem={handleRemoveItem} ingredients={ingredients}/>
                 <RecipeGenerator ingredients={ingredients}/>
             </div>
