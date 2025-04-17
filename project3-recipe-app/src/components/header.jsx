@@ -1,13 +1,24 @@
 import logo from '@image-assets/chef-claude-icon.png';
+import {useContext} from "react";
+import {UserContext} from "@components/UserContext.jsx";
 import '@css/header.scss';
 
 const Header = () => {
+
+    const { user } = useContext(UserContext);
+
     return (
         <>
             <header className="container header">
                 <div className="inner">
-                    <img src={logo} alt="Fancy Recipes"/>
-                    <h1>Chef Claude</h1>
+                    <div className="logo-section">
+                        <img src={logo} alt="Fancy Recipes"/>
+                        <h1>Chef Claude</h1>
+                    </div>
+                    <div className="user-section">
+                        <span className="name">{user.name}</span>
+                        <span className="email">{user.email}</span>
+                    </div>
                 </div>
             </header>
         </>

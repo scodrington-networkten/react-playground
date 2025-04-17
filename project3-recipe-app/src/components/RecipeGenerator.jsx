@@ -1,15 +1,33 @@
 import '@css/recipe-generator.scss';
+import {useState} from "react";
+import Recipe from "@components/Recipe.jsx";
 
 const RecipeGenerator = ({ingredients}) => {
 
     const minIngredientsRequired = 3;
+    const [hasRecipe, setHasRecipe] = useState(false);
+    const [recipe, setRecipe] = useState(null);
 
-    const getOutput = () => {
-        return <p>Hello world</p>;
+    function getRecipe(e){
+        e.preventDefault();
+        setHasRecipe(true);
     }
 
-    function getOutputNew() {
-        return <p>Hello world</p>;
+    function getRecipeSection(){
+
+
+        //display recipe if we have one collected
+        if(hasRecipe){
+            return (
+                <div className="recipe-section">
+                    <Recipe data={{name: 'hello'}}/>
+                </div>
+            )
+        }else{
+
+        }
+
+
     }
 
     function subtitleText() {
@@ -51,9 +69,10 @@ const RecipeGenerator = ({ingredients}) => {
                         </div>
                         {ingredients.length >= minIngredientsRequired &&
                             <div className="secondary">
-                                <button>Get a Recipe!</button>
+                                <button onClick={getRecipe}>Get a Recipe!</button>
                             </div>}
                     </form>
+                    {getRecipeSection()}
                 </section>
             }
         </>

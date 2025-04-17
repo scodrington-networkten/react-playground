@@ -5,14 +5,14 @@ import SignupForm from "@components/SignupForm.jsx";
 import '@css/main.scss';
 const Main = () => {
 
-
     return (
+
         <main className="main-content">
             <div className="inner">
                 <IngredientsSection/>
-                {/*<SignupForm/>*/}
             </div>
         </main>
+
     )
 }
 export default Main

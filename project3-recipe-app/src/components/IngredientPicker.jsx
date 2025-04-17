@@ -1,11 +1,15 @@
 import '@css/ingredient-picker.scss';
-import {useState} from "react";
+import {useContext, useState} from "react";
+import {UserContext} from "@components/UserContext.jsx";
 
 const IngredientPicker = ({onAddItem, ingredients}) => {
 
     //state of the input value
     const [inputValue, setInputValue] = useState("");
     const [inputInvalid, setInputInvalid] = useState(false);
+
+    const {user} = useContext(UserContext);
+    console.log(user);
 
     //action for form, provided with formdata
     function submit(formData) {
