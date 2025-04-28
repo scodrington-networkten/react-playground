@@ -15,7 +15,7 @@ function App() {
                 <div className="main">
                     <Header/>
                     <Main/>
-                    {/*<Footer/>*/}
+                    <Footer/>
                 </div>
             </UserProvider>
         </>

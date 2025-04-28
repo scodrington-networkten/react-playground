@@ -1,9 +1,14 @@
+
+import '@css/footer.scss';
+
 const Footer = () => {
     return (
         <>
-            <div className="container">
-                footer here
-            </div>
+            <section className="container footer-section">
+                <div className="inner">
+                    Copyright 2025 - Making fancy recipes
+                </div>
+            </section>
         </>
     )
 }

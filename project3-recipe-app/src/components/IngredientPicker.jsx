@@ -9,7 +9,6 @@ const IngredientPicker = ({onAddItem, ingredients}) => {
     const [inputInvalid, setInputInvalid] = useState(false);
 
     const {user} = useContext(UserContext);
-    console.log(user);
 
     //action for form, provided with formdata
     function submit(formData) {

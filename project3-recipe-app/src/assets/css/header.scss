@@ -4,6 +4,7 @@
   padding-top: 1rem;
   padding-bottom: 1rem;
   z-index: 2;
+  flex-grow: 0;
 
   .inner{
     display: flex;
@@ -28,13 +29,23 @@
       font-size: 1.88rem;
     }
 
+
+
   }
   .user-section{
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
-    flex-direction: column;
+    flex-direction: row;
     font-size: 0.8rem;
+    column-gap: 0.5rem;
+
+    .user-details{
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      flex-direction: column;
+    }
 
     .name{
       font-weight: 400;
@@ -43,7 +54,8 @@
       font-style: italic;
     }
     .icon{
-
+      width: 30px;
+      height: auto;
     }
   }
 

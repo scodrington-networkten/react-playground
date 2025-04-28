@@ -16,8 +16,11 @@ const Header = () => {
                         <h1>Chef Claude</h1>
                     </div>
                     <div className="user-section">
-                        <span className="name">{user.name}</span>
-                        <span className="email">{user.email}</span>
+                        <div className="user-details">
+                            <span className="name">{user.name}</span>
+                            <span className="email">{user.email}</span>
+                        </div>
+                        <img className="icon" src={logo} alt="user profile"/>
                     </div>
                 </div>
             </header>
