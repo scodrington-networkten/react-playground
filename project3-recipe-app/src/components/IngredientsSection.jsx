@@ -7,7 +7,7 @@ import ingredient from "@components/Ingredient.jsx";
 const IngredientsSection = () => {
 
     //holds all currently selected ingredients
-    const [ingredients, setIngredients] = useState(["Apple", "Banana", "Watermelon"]);
+    const [ingredients, setIngredients] = useState(["Apple", "Sugar", "Honey"]);
 
     //called by IngredientPicker when submitting the form, to select a new ingredient
     function handleAddItem(newItem) {

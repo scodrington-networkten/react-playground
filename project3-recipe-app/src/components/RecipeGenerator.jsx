@@ -4,108 +4,98 @@ import Recipe from "@components/recipe/Recipe.jsx";
 
 const RecipeGenerator = ({ingredients}) => {
 
-    const minIngredientsRequired = 3;
-    const [hasSearchedRecipes, setHasSearchedRecipes] = useState(false);
+    const minIngredientsRequired = 2;
     const [recipes, setRecipes] = useState(null);
+    const [totalRecipeCount, setTotalRecipeCount] = useState(0);
+    const [nextRecipesLink, setNextRecipesLink] = useState("");
 
     function getRecipes(e) {
         e.preventDefault();
-        fetchRecipes('apple');
+        fetchRecipes(ingredients);
 
     }
 
-    function fetchRecipes(searchterm) {
+    function getMoreRecipes(e){
+        e.preventDefault();
+        fetchRecipes(ingredients, nextRecipesLink)
+    }
+
+    function fetchRecipes(ingredients, nextLink = null) {
+
+        let searchterm = ingredients.join(" ");
 
         const headers = {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
             'Edamam-Account-User': 'scodrington'
         }
-
-
         let baseUrl = "https://api.edamam.com/api/recipes/v2";
-
         let appId = "4e1c40ce";
         let appKey = "cdec51cf61393d7a2a90f499218fa03c";
 
-        let queryVal = searchterm;
-        let requestUrl = `${baseUrl}?q=${queryVal}&app_id=${appId}&app_key=${appKey}&type=public`;
+        //no next link, build url
+        let requestUrl = '';
+        if(nextLink == null){
+            requestUrl = `${baseUrl}?q=${searchterm}&app_id=${appId}&app_key=${appKey}&type=public`;
+        }
+        //next link provided, just use that
+        else{
+            requestUrl = nextLink;
+        }
 
+        //fetch from the API recipes that relate to those ingredients
         try {
 
             const response = fetch(requestUrl, {
                 'headers': headers,
                 'method': 'GET'
             }).then(response => {
-
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 return response.json();
             }).then(data => {
 
-                let recipes = []
+                setTotalRecipeCount(data.count);
+                setNextRecipesLink(data._links.next.href);
 
+                let recipes = []
                 if (data.hits.length > 0) {
                     data.hits.map(item => {
                         let recipe = item.recipe;
                         let links = item._links;
                         recipes.push(recipe);
                     })
-                } else {
-
                 }
-
+                //set the recipes
                 setRecipes(recipes);
-                setHasSearchedRecipes(true);
             })
         } catch (error) {
-            console.error('fetch error', error);
+            throw new Error(`HTTP error! Status: ${error.message}`);
         }
     }
 
     ///Called when we have a recipe to show!
     function getRecipeSection() {
 
-
         //recipes never searched, return
-        if(recipes == null){
+        if (recipes == null) {
             return;
         }
 
-        if(recipes.length > 0 ){
-
-            let recipeComponent = recipes.map(item => {
+        //we have 1 or more recipes, return them for display
+        if (recipes.length > 0) {
+            return recipes.map(item => {
                 return <Recipe data={item}/>
             })
 
+        }
+        //show an error message
+        else {
             return (
-                <div className="recipe-section">
-                    {recipeComponent}
-                </div>
-            )
-        }else{
-            return (
-                <div className="recipe-section">
-                    <p>there were no recipes found!</p>
-                </div>
+                <p>there were no recipes found!</p>
             )
         }
-
-
-
-        /*
-        //display recipe if we have one collected
-        if (hasRecipe) {
-            return (
-                <div className="recipe-section">
-
-                </div>
-            )
-        } else {
-
-        }*/
-
     }
 
     function subtitleText() {
@@ -135,23 +125,33 @@ const RecipeGenerator = ({ingredients}) => {
         return value;
     }
 
-
     return (
         <>
             {ingredients.length > 0 &&
-                <section className="recipe-generator">
-                    <form>
-                        <div className="primary">
-                            <p className="title">{titleText()}</p>
-                            <p className="subtitle">{subtitleText()}</p>
-                        </div>
-                        {ingredients.length >= minIngredientsRequired &&
-                            <div className="secondary">
-                                <button onClick={getRecipes}>Get a Recipe!</button>
-                            </div>}
-                    </form>
-                    {getRecipeSection()}
-                </section>
+                <article>
+                    <section className="recipe-generator">
+                        <form>
+                            <div className="primary">
+                                <p className="title">{titleText()}</p>
+                                <p className="subtitle">{subtitleText()}</p>
+                            </div>
+                            {ingredients.length >= minIngredientsRequired &&
+                                <div className="secondary">
+                                    <button onClick={getRecipes}>Get a Recipe!</button>
+                                </div>
+                            }
+                        </form>
+                    </section>
+                    {recipes != null && recipes.length > 0 &&
+                        <section className="recipes-section">
+                            <h2>Look at all these recipes!</h2>
+                            <p>We've been able to find <strong>{totalRecipeCount}</strong> recipes that match your ingredients above. Listed below are <strong>{recipes.length}</strong> of them</p>
+                            {getRecipeSection()}
+                            <button onClick={getMoreRecipes}>Get more recipes!</button>
+                        </section>
+                    }
+                </article>
+
             }
         </>
     )
