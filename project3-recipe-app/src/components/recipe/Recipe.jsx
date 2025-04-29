@@ -1,10 +1,8 @@
-
 import '@css/recipe.scss';
 
 const Recipe = ({data}) => {
 
-
-
+    //extract data from our dataset
     let {
         label,
         ingredients = [],
@@ -21,21 +19,17 @@ const Recipe = ({data}) => {
         source
     } = data;
 
-    console.log(data);
-
-    const getIngredients =() => {
+    const getIngredients = () => {
 
         let content = ingredients.map((item, index) => {
-            const keyname= `recipe-ingredient-${index}`;
+            const keyname = `recipe-ingredient-${index}`;
             return <li key={keyname}>{item.text}</li>
         });
 
         return <ul>{content}</ul>;
     }
 
-
-
-    return(
+    return (
         <article className="recipe">
             <section className="info-section">
                 <h2>{label}</h2>

@@ -4,8 +4,6 @@ import ingredientList from "@components/IngredientList.jsx";
 
 const IngredientList = ({ingredients, onRemoveItem}) => {
 
-
-
     const getContent = () => {
 
         //extract data about the ingredients
@@ -28,15 +26,12 @@ const IngredientList = ({ingredients, onRemoveItem}) => {
                 <h2>Enter ingredients above to get started</h2>
             </>
         }
-
     };
 
     return (
-        <>
-            <div className="ingredient-list">
-                {getContent()}
-            </div>
-        </>
+        <div className="ingredient-list">
+            {getContent()}
+        </div>
     )
 }
 export default IngredientList
