@@ -15,11 +15,13 @@ const RecipeGenerator = ({ingredients}) => {
 
     }
 
+    //called from the button to load more, will use the nextrecipe link to load the next set of data
     function getMoreRecipes(e){
         e.preventDefault();
         fetchRecipes(ingredients, nextRecipesLink)
     }
 
+    //fetch recipes from the API
     function fetchRecipes(ingredients, nextLink = null) {
 
         let searchterm = ingredients.join(" ");
@@ -85,10 +87,10 @@ const RecipeGenerator = ({ingredients}) => {
 
         //we have 1 or more recipes, return them for display
         if (recipes.length > 0) {
-            return recipes.map(item => {
-                return <Recipe data={item}/>
+            return recipes.map((item,index) => {
+                const keyname = `recipe-item-${index}`;
+                return <Recipe data={item} key={keyname}/>
             })
-
         }
         //show an error message
         else {

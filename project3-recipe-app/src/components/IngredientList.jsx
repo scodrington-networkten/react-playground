@@ -4,14 +4,17 @@ import ingredientList from "@components/IngredientList.jsx";
 
 const IngredientList = ({ingredients, onRemoveItem}) => {
 
-    //extract data about the ingredients
-    let components = ingredients.map((item, index) => {
-        return <li>
-            <Ingredient data={{name: item}} key={index} onRemoveItem={onRemoveItem}/>
-        </li>
-    });
+
 
     const getContent = () => {
+
+        //extract data about the ingredients
+        let components = ingredients.map((item, index) => {
+            const keyname = `ingredient-${index}`;
+            return <li key={keyname}>
+                <Ingredient data={{name: item}} onRemoveItem={onRemoveItem}/>
+            </li>
+        });
 
         if(ingredients.length > 0){
             return <>
