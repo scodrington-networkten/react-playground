@@ -10,7 +10,7 @@ function App() {
 
     return (
         <>
-            <main className="main">
+            <main className="main flex justify-center flex-col flex-grow-1 ">
                 <Header/>
                 <MainContent/>
                 <Footer/>
