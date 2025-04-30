@@ -13,8 +13,15 @@ const MainContent = () => {
                         <input type="text" id="bottom_text" name="bottom_text" placeholder="witty bottom text here"
                                className="rounded border border-gray-400 py-1 px-2"/>
                     </section>
-                    <section className="w-full">
+                    <section className="button-section w-full">
                         <button name="generate" id="generate" className="py-3 px-6 rounded">Get a new Image</button>
+                    </section>
+                    <section className="image-section w-full">
+                        <div className="image-container flex-grow-1 relative">
+                            <img src="http://i.imgflip.com/1bij.jpg" className="w-full" />
+                            <span className="top" className="image-text font-bold uppercase text-5xl text-center absolute inset-x-0 top-0 align-text-center my-5">One does not simply</span>
+                            <span className="bottom" className="image-text font-bold uppercase text-5xl text-center absolute inset-x-0 bottom-0 bottom-0 my-5">Walk into Mordor</span>
+                        </div>
                     </section>
                 </form>
             </div>
